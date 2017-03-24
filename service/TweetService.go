@@ -1,25 +1,31 @@
 package service
 
 import (
+	"context"
+
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/fgruchala/twall-middle-go/converter"
 	"github.com/fgruchala/twall-middle-go/model"
+	"golang.org/x/oauth2"
 )
 
-var twitterClient *twitter.Client
+// TweetService define a tweet service
+type TweetService struct {
+	Client *twitter.Client
+}
 
 // NewTweetService initialize a connection with the Twitter API
-func NewTweetService(key, secret *string) {
-	/*config := oauth1.NewConfig(key, secret)
-	token := oauth1.NewToken("accessToken", "accessSecret")
-	httpClient := config.Client(oauth1.NoContext, token)*/
+func NewTweetService() *TweetService {
+	config := &oauth2.Config{}
+	token := &oauth2.Token{AccessToken: "715300702298447872-ogVmHS8fX10SyxTeYRk3C9QViecTtar"}
+	httpClient := config.Client(context.Background(), token)
 
-	twitterClient = twitter.NewClient(httpClient)
+	return &TweetService{Client: twitter.NewClient(httpClient)}
 }
 
 // Search over the Twitter API
-func Search(params *twitter.SearchTweetParams) ([]model.Tweet, error) {
-	search, resp, err := twitterClient.Search.Tweets(params)
+func (ts *TweetService) Search(params *twitter.SearchTweetParams) ([]model.Tweet, error) {
+	search, _, err := ts.Client.Search.Tweets(params)
 
 	if err != nil {
 		return make([]model.Tweet, 0), err
