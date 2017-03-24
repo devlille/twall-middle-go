@@ -11,7 +11,7 @@ type Tweet struct {
 	RetweetCount int    `json:retweet_count`
 }
 
-// String stringify the TwallTweet struct
+// String stringify the Tweet struct
 func (t *Tweet) String() string {
-	return fmt.Sprintf("TwallTweet : Id %v, User %v, CreatedAt %v", t.ID, t.User, t.CreatedAt)
+	return fmt.Sprintf("Tweet : Id %v, User %v, CreatedAt %v", t.ID, t.User, t.CreatedAt)
 }
