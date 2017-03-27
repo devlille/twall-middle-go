@@ -6,6 +6,8 @@ import (
 
 	"time"
 
+	log "github.com/sirupsen/logrus"
+
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/fgruchala/twall-middle-go/service"
 	"github.com/gorilla/mux"
@@ -30,6 +32,8 @@ func NewTweetWebservice(router *mux.Router) *TweetWebservice {
 
 // GetAll return all tweets
 func (tws *TweetWebservice) GetAll(w http.ResponseWriter, r *http.Request) {
+	log.Info("[TweetWebservice] Searching tweet(s) ...")
+
 	since := time.Now().AddDate(0, 0, -1).Format("2006-01-02")
 	params := &twitter.SearchTweetParams{
 		Query:      "#devfestlille -filter:retweets since:" + since,
@@ -38,8 +42,10 @@ func (tws *TweetWebservice) GetAll(w http.ResponseWriter, r *http.Request) {
 	tweets, err := tws.Service.Search(params)
 
 	if err != nil {
-		http.Error(w, "Failed to get tweets", http.StatusInternalServerError)
+		log.WithField("error", err).Error("[TweetWebservice] Failed to get tweet(s)")
+		http.Error(w, "Failed to get tweet(s)", http.StatusInternalServerError)
 	} else {
+		log.WithField("count", len(tweets)).Info("[TweetWebservice] Tweet(s) returned.")
 		json.NewEncoder(w).Encode(tweets)
 	}
 }
