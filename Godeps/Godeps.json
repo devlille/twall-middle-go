@@ -1,0 +1,55 @@
+{
+	"ImportPath": "github.com/fgruchala/twall-middle-go",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/cenkalti/backoff",
+			"Comment": "v1.0.0-18-g3db60c8",
+			"Rev": "3db60c813733fce657c114634171689bbf1f8dee"
+		},
+		{
+			"ImportPath": "github.com/dghubble/go-twitter/twitter",
+			"Rev": "fc93bb35701bb85903d17daa80a21a824b9c592f"
+		},
+		{
+			"ImportPath": "github.com/dghubble/sling",
+			"Comment": "v1.1.0-4-gbbfb829",
+			"Rev": "bbfb8293bd33a6baad33d718aacf66ef73a29f30"
+		},
+		{
+			"ImportPath": "github.com/google/go-querystring/query",
+			"Rev": "53e6ce116135b80d037921a7fdd5138cf32d7a8a"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.3.0-5-g599cba5",
+			"Rev": "599cba5e7b6137d46ddf58fb1765f5d928e69604"
+		},
+		{
+			"ImportPath": "github.com/sirupsen/logrus",
+			"Comment": "v0.11.5-12-g10f801e",
+			"Rev": "10f801ebc38b33738c9d17d50860f484a0988ff5"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "a6577fac2d73be281a500b310739095313165611"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2",
+			"Rev": "7fdf09982454086d5570c7db3e11f360194830ca"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/clientcredentials",
+			"Rev": "7fdf09982454086d5570c7db3e11f360194830ca"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/internal",
+			"Rev": "7fdf09982454086d5570c7db3e11f360194830ca"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "afadfcc7779c1f4db0f6f6438afcb108d9c9c7cd"
+		}
+	]
+}
