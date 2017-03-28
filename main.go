@@ -39,7 +39,7 @@ func main() {
 	// CORS
 	c := cors.New(cors.Options{
 		AllowedOrigins: []string{*corsOrigin},
-		AllowedHeaders: []string{"Origin"}})
+		AllowedMethods: []string{"GET"}})
 
 	mux := http.NewServeMux()
 	mux.Handle("/", router)
