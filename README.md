@@ -1,6 +1,7 @@
 # Twall - MIDDLE
 
 Live wall of tweets for the #devfestlille 2017
+To combine with [Twall - FRONT](https://github.com/fgruchala/twall-front-vuejs)
 
 ## Made with ...
 * Love
@@ -12,10 +13,6 @@ Live wall of tweets for the #devfestlille 2017
 ## Requirement for Twitter
 You have to generate token to access the Twitter API, in particular consumer key and secret. 
 Go to https://apps.twitter.com/ and generate them.
-
-## To configure
-1. In the app/app.config.js, fill the **twitter.consumer.key** and **twitter.consumer.secret** fields
-2. Create a file for logging corresponding to the **log.filename** field
 
 ## To develop
 1. Initialize by `<WORKSPACE_GO_SRC_DIR>/github.com/fgruchala/twall-middle-go/$ godep go install`
