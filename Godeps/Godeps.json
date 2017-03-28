@@ -27,6 +27,16 @@
 			"Rev": "599cba5e7b6137d46ddf58fb1765f5d928e69604"
 		},
 		{
+			"ImportPath": "github.com/rs/cors",
+			"Comment": "v1.0",
+			"Rev": "a62a804a8a009876ca59105f7899938a1349f4b3"
+		},
+		{
+			"ImportPath": "github.com/rs/xhandler",
+			"Comment": "v1.0-1-ged27b6f",
+			"Rev": "ed27b6fd65218132ee50cd95f38474a3d8a2cd12"
+		},
+		{
 			"ImportPath": "github.com/sirupsen/logrus",
 			"Comment": "v0.11.5-12-g10f801e",
 			"Rev": "10f801ebc38b33738c9d17d50860f484a0988ff5"
