@@ -1,6 +1,7 @@
 # Twall - MIDDLE
 
 Live wall of tweets for the #devfestlille 2017
+
 To combine with [Twall - FRONT](https://github.com/fgruchala/twall-front-vuejs)
 
 ## Made with ...
@@ -11,7 +12,8 @@ To combine with [Twall - FRONT](https://github.com/fgruchala/twall-front-vuejs)
 * [Search API](https://dev.twitter.com/rest/public/search) from [Twitter](https://twitter.com/) 
 
 ## Requirement for Twitter
-You have to generate token to access the Twitter API, in particular consumer key and secret. 
+You have to generate token to access the Twitter API, in particular consumer key and secret.
+
 Go to https://apps.twitter.com/ and generate them.
 
 ## To develop
