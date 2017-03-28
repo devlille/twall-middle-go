@@ -46,6 +46,7 @@ func (tws *TweetWebservice) GetAll(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Failed to get tweet(s)", http.StatusInternalServerError)
 	} else {
 		log.WithField("count", len(tweets)).Info("[TweetWebservice] Tweet(s) returned.")
+		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(tweets)
 	}
 }
