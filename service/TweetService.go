@@ -18,10 +18,10 @@ type TweetService struct {
 }
 
 // NewTweetService initialize a connection with the Twitter API
-func NewTweetService() *TweetService {
+func NewTweetService(consumerKey *string, consumerSecret *string) *TweetService {
 	config := &clientcredentials.Config{
-		ClientID:     "XXX",
-		ClientSecret: "XXX",
+		ClientID:     *consumerKey,
+		ClientSecret: *consumerSecret,
 		TokenURL:     "https://api.twitter.com/oauth2/token"}
 	_, err := config.Token(context.TODO())
 

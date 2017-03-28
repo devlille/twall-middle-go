@@ -20,10 +20,10 @@ type TweetWebservice struct {
 }
 
 // NewTweetWebservice initialize the twall API for tweet
-func NewTweetWebservice(router *mux.Router) *TweetWebservice {
+func NewTweetWebservice(router *mux.Router, tweetService *service.TweetService) *TweetWebservice {
 	webservice := TweetWebservice{
 		Routes:  router.PathPrefix("/api/tweet").Subrouter(),
-		Service: service.NewTweetService()}
+		Service: tweetService}
 
 	webservice.Routes.HandleFunc("/", webservice.GetAll)
 
