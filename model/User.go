@@ -4,7 +4,7 @@ import "fmt"
 
 // User define a user
 type User struct {
-	ScreenName string `json:screen_name`
+	ScreenName string `json:"screen_name"`
 }
 
 // String stringify the User struct
