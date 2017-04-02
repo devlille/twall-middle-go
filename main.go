@@ -5,6 +5,7 @@ import (
 
 	"github.com/rs/cors"
 	log "github.com/sirupsen/logrus"
+	"github.com/urfave/negroni"
 
 	"flag"
 
@@ -36,14 +37,20 @@ func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	webservice.NewTweetWebservice(router, tweetService)
 
-	// CORS
+	// HTTP server
+	mux := http.NewServeMux()
+	mux.Handle("/", router)
+
+	// Middleware CORS
 	c := cors.New(cors.Options{
 		AllowedOrigins: []string{*corsOrigin},
 		AllowedMethods: []string{"GET"}})
+	handlerCors := c.Handler(mux)
 
-	mux := http.NewServeMux()
-	mux.Handle("/", router)
-	handler := c.Handler(mux)
+	// Middleware HTTP
+	n := negroni.Classic()
+	n.UseHandler(handlerCors)
+
 	log.WithFields(log.Fields{"port": *port}).Info("Starting server ...")
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", *port), handler))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", *port), n))
 }

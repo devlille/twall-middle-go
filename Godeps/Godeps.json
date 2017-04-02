@@ -42,6 +42,11 @@
 			"Rev": "10f801ebc38b33738c9d17d50860f484a0988ff5"
 		},
 		{
+			"ImportPath": "github.com/urfave/negroni",
+			"Comment": "v0.2.0-104-gc0db5fe",
+			"Rev": "c0db5feaa33826cd5117930c8f4ee5c0f565eec6"
+		},
+		{
 			"ImportPath": "golang.org/x/net/context",
 			"Rev": "a6577fac2d73be281a500b310739095313165611"
 		},
